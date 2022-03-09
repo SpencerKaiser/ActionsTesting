@@ -10,6 +10,9 @@ on:
         type: environment
         required: true
 
+env:
+  ENVIRONMENT_NAME: ${{ github.event.inputs.environment || 'stage' }}
+
 jobs:
   release:
     name: Build and Push
@@ -20,8 +23,7 @@ jobs:
       - name: Print Deployment Target
         run: |
           echo "Deployment Target: ${{ github.event.inputs.environment || 'stage' }}"
-          echo "${{ jobs }} "
-          echo "${{ job.release }} "
+          echo "${{ $ENVIRONMENT_NAME }} "
 
       - name: Success Notification
         id: slack
@@ -36,11 +38,10 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT }}`)"
+                    "text": ":rocket: Testing (`${{ $ENVIRONMENT_NAME }}`)"
                   }
                 }
               ]
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          ENVIRONMENT: job
