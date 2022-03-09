@@ -17,7 +17,7 @@ jobs:
   release:
     name: Build and Push
     environment:
-      name: "${{ env.ENVIRONMENT_NAME }}"
+      name: ${{ $ENVIRONMENT_NAME }}
     runs-on: ubuntu-latest
     steps:
       - name: Print Deployment Target
