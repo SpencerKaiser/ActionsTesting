@@ -1,0 +1,44 @@
+name: Testing
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deployment Environment"
+        type: environment
+        required: true
+
+jobs:
+  release:
+    name: Build and Push
+    environment:
+      name: ${{ github.event.inputs.environment || 'stage' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Deployment Target
+        run: |
+          echo "Deployment Target: ${{ github.event.inputs.environment || 'stage' }}"
+
+      - name: Success Notification
+        id: slack
+        uses: slackapi/slack-github-action@v1.16.0
+        with:
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+          payload: |
+            {
+              "text": ":rocket: Successful Release",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":rocket: Testing (`$ENVIRONMENT`)"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          ENVIRONMENT: ${{ jobs.release.environment }}
