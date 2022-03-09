@@ -23,7 +23,7 @@ jobs:
       - name: Print Deployment Target
         run: |
           echo "Deployment Target: ${{ github.event.inputs.environment || 'stage' }}"
-          echo "${{ $ENVIRONMENT_NAME }} "
+          echo "${{ env.ENVIRONMENT_NAME }} "
 
       - name: Success Notification
         id: slack
@@ -38,7 +38,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":rocket: Testing (`${{ $ENVIRONMENT_NAME }}`)"
+                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)"
                   }
                 }
               ]
