@@ -17,13 +17,12 @@ jobs:
   release:
     name: Build and Push
     environment:
-      name: ${{ $ENVIRONMENT_NAME }}
+      name: ${{ github.event.inputs.environment || 'stage' }}
     runs-on: ubuntu-latest
     steps:
       - name: Print Deployment Target
         run: |
-          echo "Deployment Target: ${{ github.event.inputs.environment || 'stage' }}"
-          echo "${{ env.ENVIRONMENT_NAME }}"
+          echo "Deployment Target: ${{ env.ENVIRONMENT_NAME }}"
 
       - name: Success Notification
         id: slack
