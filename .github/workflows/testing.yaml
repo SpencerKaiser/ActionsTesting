@@ -39,7 +39,7 @@ jobs:
                   "text": {
                     "type": "mrkdwn",
                     "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)"
-                  }
+                  },
                   "accessory": {
                     "type": "button",
                     "text": {
