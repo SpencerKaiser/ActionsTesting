@@ -17,7 +17,7 @@ jobs:
   release:
     name: Build and Push
     environment:
-      name: ${{ github.event.inputs.environment || 'stage' }}
+      name: ${{ env.ENVIRONMENT_NAME }}
     runs-on: ubuntu-latest
     steps:
       - name: Print Deployment Target
@@ -47,7 +47,7 @@ jobs:
                       "text": "Go to App",
                       "emoji": true
                     },
-                    "url": "https://www.google.com"
+                    "url": "${{ env.APP_URL }}"
                   }
                 }
               ]
