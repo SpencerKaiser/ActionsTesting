@@ -38,7 +38,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)"
+                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`) ${{ env.APP_URL }}"
                   },
                   "accessory": {
                     "type": "button",
@@ -47,7 +47,7 @@ jobs:
                       "text": "Go to App",
                       "emoji": true
                     },
-                    "url": "${{ env.APP_URL }}"
+                    "url": "www.google.com"
                   }
                 }
               ]
