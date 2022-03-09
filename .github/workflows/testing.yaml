@@ -40,8 +40,18 @@ jobs:
                     "type": "mrkdwn",
                     "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)"
                   }
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "Go to App",
+                      "emoji": true
+                    },
+                    "url": "${{ env.APP_URL }}"
+                  }
                 }
               ]
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          APP_URL: ${{ env.ENVIRONMENT_NAME === 'prod' && 'www.google.com' || 'www.bing.com' }}
