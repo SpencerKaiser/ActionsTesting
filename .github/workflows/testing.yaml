@@ -47,7 +47,7 @@ jobs:
                       "text": "Go to App",
                       "emoji": true
                     },
-                    "url": "www.google.com"
+                    "url": "https://www.google.com"
                   }
                 }
               ]
