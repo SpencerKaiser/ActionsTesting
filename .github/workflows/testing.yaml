@@ -20,7 +20,7 @@ jobs:
       - name: Print Deployment Target
         run: |
           echo "Deployment Target: ${{ github.event.inputs.environment || 'stage' }}"
-          echo "${{ job }} "
+          echo "${{ job.environment }} "
 
       - name: Success Notification
         id: slack
