@@ -37,7 +37,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`) ${{ env.APP_URL }}"
+                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)"
                   },
                   "accessory": {
                     "type": "button",
