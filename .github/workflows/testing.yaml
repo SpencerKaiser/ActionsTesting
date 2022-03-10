@@ -46,11 +46,10 @@ jobs:
                       "text": "Go to App",
                       "emoji": true
                     },
-                    "url": "${{ env.APP_URL }}"
+                    "url": "${{ env.ENVIRONMENT_NAME == 'prod' && 'https://www.google.com' || 'https://www.bing.com' }}"
                   }
                 }
               ]
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          APP_URL: ${{ env.ENVIRONMENT_NAME == 'prod' && 'https://www.google.com' || 'https://www.bing.com' }}
