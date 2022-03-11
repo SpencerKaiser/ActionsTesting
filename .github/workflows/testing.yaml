@@ -46,7 +46,7 @@ jobs:
                       "text": "Go to App",
                       "emoji": true
                     },
-                    "url": "${{ env.ENVIRONMENT_NAME == 'prod' && 'https://www.google.com' || 'https://www.bing.com' }}"
+                    "url": "${{ secrets.APP_URL }}"
                   }
                 }
               ]
