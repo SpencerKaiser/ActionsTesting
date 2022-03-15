@@ -23,33 +23,36 @@ jobs:
       - name: Print Deployment Target
         run: |
           echo "Deployment Target: ${{ env.ENVIRONMENT_NAME }}"
+          THING='test'
+          THING=${{ secrets.SOMETHING }} || ${BASE_URL%/}
+          echo '$THING'
 
-      - name: Success Notification
-        id: slack
-        uses: slackapi/slack-github-action@v1.16.0
-        with:
-          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
-          payload: |
-            {
-              "text": ":rocket: Successful Release",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)"
-                  },
-                  "accessory": {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "Go to App",
-                      "emoji": true
-                    },
-                    "url": "${{ secrets.APP_URL }}"
-                  }
-                }
-              ]
-            }
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+#       - name: Success Notification
+#         id: slack
+#         uses: slackapi/slack-github-action@v1.16.0
+#         with:
+#           channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
+#           payload: |
+#             {
+#               "text": ":rocket: Successful Release",
+#               "blocks": [
+#                 {
+#                   "type": "section",
+#                   "text": {
+#                     "type": "mrkdwn",
+#                     "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)"
+#                   },
+#                   "accessory": {
+#                     "type": "button",
+#                     "text": {
+#                       "type": "plain_text",
+#                       "text": "Go to App",
+#                       "emoji": true
+#                     },
+#                     "url": "${{ secrets.APP_URL }}"
+#                   }
+#                 }
+#               ]
+#             }
+#         env:
+#           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
