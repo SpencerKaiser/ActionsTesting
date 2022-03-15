@@ -23,7 +23,8 @@ jobs:
       - name: Print Deployment Target
         run: |
           # echo "Deployment Target: ${{ env.ENVIRONMENT_NAME }}"
-          THING=${{ secrets.SOMETHING || pwd }} 
+          THING='testing'
+          THING="${${{ secrets.SOMETHING }}:-$THING}"
           echo "AFTER:" $THING
 
 #       - name: Success Notification
