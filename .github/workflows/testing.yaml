@@ -24,7 +24,7 @@ jobs:
         run: |
           echo "Deployment Target: ${{ env.ENVIRONMENT_NAME }}"
           THING='test'
-          THING=${{ secrets.SOMETHING  || $TEST }}
+          THING=${{ secrets.SOMETHING  || env.TEST }}
           echo $THING
 
 #       - name: Success Notification
