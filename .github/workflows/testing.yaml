@@ -24,8 +24,8 @@ jobs:
         run: |
           # echo "Deployment Target: ${{ env.ENVIRONMENT_NAME }}"
           THING='testing'
-          NO=""
-          THING="${NO:-$THING}"
+          OVERRIDE_URL=${{ secrets.SOMETHING }}
+          THING="${OVERRIDE_URL:-$THING}"
           echo "AFTER:" $THING
 
 #       - name: Success Notification
