@@ -24,9 +24,10 @@ jobs:
         run: |
           echo "Deployment Target: ${{ env.ENVIRONMENT_NAME }}"
           THING='test'
+          echo $THING >> $GITHUB_ENV
           echo "BEFORE:" $THING
-          echo ${{ false }} || $THING
-          THING=${{ secrets.SOMETHING }} || $THING 
+          echo ${{ env.THING }}
+          echo ${{ false || env.THING }}
           echo "AFTER:" $THING
 
 #       - name: Success Notification
