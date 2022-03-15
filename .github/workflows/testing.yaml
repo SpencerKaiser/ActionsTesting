@@ -27,7 +27,6 @@ jobs:
           echo "BEFORE:" ${{ env.THING }} 
           THING=${{ secrets.SOMETHING || env.THING }}
           echo "AFTER:" $THING
-          echo "Test: " ${{  }}
 
 #       - name: Success Notification
 #         id: slack
