@@ -25,7 +25,7 @@ jobs:
           echo "Deployment Target: ${{ env.ENVIRONMENT_NAME }}"
           THING='test'
           THING=${{ secrets.SOMETHING }} || ${BASE_URL%/}
-          echo '$THING'
+          echo $THING
 
 #       - name: Success Notification
 #         id: slack
