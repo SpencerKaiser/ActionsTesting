@@ -24,7 +24,7 @@ jobs:
         run: |
           # echo "Deployment Target: ${{ env.ENVIRONMENT_NAME }}"
           THING='testing'
-          OVERRIDE_URL=${{ secrets.SOMETHING }}
+          OVERRIDE_URL=${{ secrets.OVERRIDE_URL }}
           THING="${OVERRIDE_URL:-$THING}"
           echo "AFTER:" $THING
 
