@@ -24,7 +24,7 @@ jobs:
         run: |
           # echo "Deployment Target: ${{ env.ENVIRONMENT_NAME }}"
           THING='testing'
-          NO="NAH"
+          NO=""
           THING="${NO:-$THING}"
           echo "AFTER:" $THING
 
