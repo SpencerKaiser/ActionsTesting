@@ -24,10 +24,10 @@ jobs:
         run: |
           echo "Deployment Target: ${{ env.ENVIRONMENT_NAME }}"
           THING='test'
-          echo "BEFORE:" $THING
-          THING=${{ secrets.SOMETHING  || env.THING }}
+          echo "BEFORE:" ${{ env.THING }} 
+          THING=${{ secrets.SOMETHING || env.THING }}
           echo "AFTER:" $THING
-          echo "Test: " ${{ ${THING} }}
+          echo "Test: " ${{  }}
 
 #       - name: Success Notification
 #         id: slack
