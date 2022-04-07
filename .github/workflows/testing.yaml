@@ -83,4 +83,4 @@ jobs:
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          DEPLOYMENT_NODES: ${{ github.event.inputs.environment }} || "<${{ steps.PR.outputs.pr_url }} | ${{ steps.PR.outputs.pr_title }}>"
+          DEPLOYMENT_NODES: ${{ github.event.inputs.deploymentNotes }} || "<${{ steps.PR.outputs.pr_url }} | ${{ steps.PR.outputs.pr_title }}>"
