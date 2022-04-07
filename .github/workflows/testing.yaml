@@ -67,7 +67,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)\n\n*"
+                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)\n\n*${{ env.DEPLOYMENT_NOTES }}*"
                   },
                   "accessory": {
                     "type": "button",
