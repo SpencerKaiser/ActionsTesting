@@ -9,6 +9,10 @@ on:
         description: "Deployment Environment"
         type: environment
         required: true
+      deployNotes:
+        description: 'Deployment Notes'
+        type: text
+        required: true
 
 env:
   ENVIRONMENT_NAME: ${{ github.event.inputs.environment || 'stage' }}
@@ -63,7 +67,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)\n\n*<${{ steps.PR.outputs.pr_url }} | ${{ steps.PR.outputs.pr_title }}>*\n${{ steps.PR.outputs.pr_body }}"
+                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)\n\n*"
                   },
                   "accessory": {
                     "type": "button",
@@ -79,3 +83,4 @@ jobs:
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          DEPLOYMENT_NODES: ${{ github.event.inputs.environment }} || "<${{ steps.PR.outputs.pr_url }} | ${{ steps.PR.outputs.pr_title }}>"
