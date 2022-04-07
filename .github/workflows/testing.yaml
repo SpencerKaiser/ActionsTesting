@@ -83,4 +83,4 @@ jobs:
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          DEPLOYMENT_NOTES: ${{ github.event.inputs.deploymentNotes || format('<{0} | {1}>', steps.PR.outputs.pr_url, steps.PR.outputs.pr_title) }}
+          DEPLOYMENT_NOTES: ${{ github.event.inputs.deploymentNotes || format('<{0} | {1}>', steps.PR.outputs.pr_url, steps.PR.outputs.pr_title) || 'No deployment notes found' }}
