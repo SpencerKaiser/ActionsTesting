@@ -67,7 +67,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)\n\n*${{ env.DEPLOYMENT_NOTES }}*"
+                    "text": ":rocket: Testing (`${{ env.ENVIRONMENT_NAME }}`)\n\n*${{ github.event.inputs.deploymentNotes || format('<{0} | {1}>', steps.PR.outputs.pr_url, steps.PR.outputs.pr_title) }}*"
                   },
                   "accessory": {
                     "type": "button",
@@ -83,4 +83,3 @@ jobs:
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          DEPLOYMENT_NOTES: ${{ github.event.inputs.deploymentNotes }} || 'wat'
