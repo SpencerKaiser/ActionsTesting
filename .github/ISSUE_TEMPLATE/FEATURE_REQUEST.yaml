@@ -3,7 +3,10 @@ description: Suggest an idea for Chappy
 labels: ["needs grooming"]
 body:
   - type: markdown
-    value: "# Problem Statement"
+    attributes:
+      value: |
+        # Problem Statement
+        _As a member I want an awesome new button so that I can do big things!_
   - type: dropdown
     id: user
     label: As a [user]
