@@ -10,22 +10,25 @@ body:
   - type: dropdown
     id: user
     label: As a [user]
-    options:
-      - member
-      - provider
-      - member OR provider
+    attributes: 
+      options:
+        - member
+        - provider
+        - member OR provider
     validations:
       required: true
   - type: input
     id: desire
     label: I want [feature]
-    placeholder: an awesome new button
+    attributes:
+      placeholder: an awesome new button
     validations:
       required: true
   - type: input
     id: outcome
     label: So that [outcome]
-    placeholder: I can do big things!
+    attributes:
+      placeholder: I can do big things!
     validations:
       required: true
   - type: textarea
