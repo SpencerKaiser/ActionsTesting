@@ -9,8 +9,8 @@ body:
         _As a member I want an awesome new button so that I can do big things!_
   - type: dropdown
     id: user
-    label: As a [user]
     attributes: 
+      label: As a [user]
       options:
         - member
         - provider
@@ -19,15 +19,15 @@ body:
       required: true
   - type: input
     id: desire
-    label: I want [feature]
     attributes:
+      label: I want [feature]
       placeholder: an awesome new button
     validations:
       required: true
   - type: input
     id: outcome
-    label: So that [outcome]
     attributes:
+      label: So that [outcome]
       placeholder: I can do big things!
     validations:
       required: true
