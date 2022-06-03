@@ -1,0 +1,21 @@
+---
+name: 🚀 Feature request
+about: Suggest an idea for this project.
+labels: needs grooming
+---
+
+### Problem Statement
+<!-- A clear and concise description of what the problem is -->
+<!-- EXAMPLE: As a member, I want a new "Ship It" button so I can ship new stuff! -->
+As a ______, I want ______ so that ______
+
+### Proposed Solution
+<!-- Numbered steps for how a user will use this functionality -->
+1. 
+
+### Implementation Tasks
+- [ ] 
+
+
+### Additional context
+<!-- Add any other context or screenshots about the feature request here. -->
